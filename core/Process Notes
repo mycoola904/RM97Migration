@@ -1,0 +1,7 @@
+ ---- Build Services  ----   
+    1. py remigrateservices.py
+    2. py services.py
+    3. review ServiceCodeDetails.xlsx and add any information needed.  SAVE AS ServiceCodeDetailsDONOTREFILL.xlsx
+    4. delete from ServiceCodeDetails.xlsx
+    5. paste from ServiceCodeDetailsDONOTREFILL.xlsx into ServiceCodeDetails.xlsx
+    4. run services.py as needed to update the services list and repeat steps 3-5 as needed.
