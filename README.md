@@ -1,6 +1,6 @@
 # RM97 Data Migration
 
-Welcome! This is a public, read-only Django project intended for educational, reference, or personal experimentation purposes.
+Welcome! This is a public, read-only RM97 data migration project.
 
 ## 🔍 View the Code
 
