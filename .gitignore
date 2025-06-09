@@ -7,7 +7,7 @@ venv/
 __pycache__/
 
 # Django migrations
-*/migrations/*
+# */migrations/*
 
 # Database files
 *.sqlite3
