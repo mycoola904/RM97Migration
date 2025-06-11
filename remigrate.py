@@ -85,45 +85,45 @@ call_command("migrate", "rm97")
 # MOVE TO SUPPORT TABLES SQL FILES
 
 
-# create list of the contact types to be inserted
-contact_types = [
-    "Operations/Service",
-    "A/P Contact",
-    "Other Contact",
+# # create list of the contact types to be inserted
+# contact_types = [
+#     "Operations/Service",
+#     "A/P Contact",
+#     "Other Contact",
 
-]
+# ]
 
-# insert the contact types into the database
-with cnxn.cursor() as cursor:
-    for contact_type in contact_types:
-        cursor.execute(
-            "INSERT INTO ContactType (Type) VALUES (?)", contact_type
-        )
-        print(f"Inserted {contact_type}")
+# # insert the contact types into the database
+# with cnxn.cursor() as cursor:
+#     for contact_type in contact_types:
+#         cursor.execute(
+#             "INSERT INTO ContactType (Type) VALUES (?)", contact_type
+#         )
+#         print(f"Inserted {contact_type}")
 
 # create list of the populate customers sql files to be executed
 sql_list = [
-    "supporttables.sql",
-    "NextBillingDates.sql",
-    "customers.sql", # Review this file for grandchild accounts and billing addresses
-    "update_migration_status.sql",
-    "update_billing_info.sql",
-    "populate_customers.sql",
-    "populate_customer_locations.sql",
-    "customer_headquarters_billing.sql",
-    "populate_contacts.sql",
-    "build_routes.sql",
-    "populate_routing.sql",
-    "populate_routes.sql",
-    "populate_call_log.sql",
-    "populate_aged_debtors.sql",
-    "active_auto.sql",
-    "service_agreements.sql",
-    "site_order_header.sql",
-    "site_order_rental.sql",
-    "site_order_assignments.sql",
-    "populate_container_template.sql",
-    "final_updates.sql",
+    # "supporttables.sql",
+    # "NextBillingDates.sql",
+    # "customers.sql", # Review this file for grandchild accounts and billing addresses
+    # "update_migration_status.sql",
+    # "update_billing_info.sql",
+    # "populate_customers.sql",
+    # "populate_customer_locations.sql",
+    # "customer_headquarters_billing.sql",
+    # "populate_contacts.sql",
+    # "build_routes.sql",
+    # "populate_routing.sql",
+    # "populate_routes.sql",
+    # "populate_call_log.sql",
+    # "populate_aged_debtors.sql",
+    # "active_auto.sql",
+    # "service_agreements.sql",
+    # "site_order_header.sql",
+    # "site_order_rental.sql",
+    # "site_order_assignments.sql",
+    # "populate_container_template.sql",
+    # "final_updates.sql",
 
 ]
 
