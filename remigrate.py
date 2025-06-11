@@ -50,7 +50,7 @@ sql_list = [
 ]
 
 # set the path to the directory that contains the .sql files
-sql_path = os.getcwd() + "\sql\\"
+sql_path = os.getcwd() + "\\sql\\"
 
 # execute the sql files
 with cnxn.cursor() as cursor:
@@ -128,7 +128,7 @@ sql_list = [
 ]
 
 # set the path to the directory that contains the .sql files
-sql_path = os.getcwd() + "\sql\\"
+sql_path = os.getcwd() + "\\sql\\"
 start_time = datetime.datetime.now()
 # execute the sql files
 with cnxn.cursor() as cursor:
