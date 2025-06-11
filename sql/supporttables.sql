@@ -1,11 +1,11 @@
 
 -- Populate ContactType table
 
-INSERT [dbo].[ContactType] ([Type]) VALUES (1, N'Operations/Service')
+INSERT [dbo].[ContactType] ([Type]) VALUES (N'Operations/Service')
 
-INSERT [dbo].[ContactType] ([Type]) VALUES (2, N'A/P Contact')
+INSERT [dbo].[ContactType] ([Type]) VALUES (N'A/P Contact')
 
-INSERT [dbo].[ContactType] ([Type]) VALUES (3, N'Other Contact')
+INSERT [dbo].[ContactType] ([Type]) VALUES (N'Other Contact')
 
 drop table if exists xBillCycles
 
