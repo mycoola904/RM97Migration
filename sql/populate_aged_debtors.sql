@@ -23,51 +23,51 @@
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate() as date) InvoiceDate, cast(getdate() as date) DueDate
-	, isnull(C_UN_BILL, 0) + isnull(C_CUR_DUE, 0) + isnull(C_FIN_CHG, 0)   Amount, 'CurDue' Age
+	, round(isnull(C_UN_BILL, 0) + isnull(C_CUR_DUE, 0) + isnull(C_FIN_CHG, 0),5) Amount, 'CurDue' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_UN_BILL, 0) + isnull(C_CUR_DUE, 0) + isnull(C_FIN_CHG, 0)  <> 0
 
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate()-15 as date) InvoiceDate, cast(getdate()-15 as date) DueDate
-	, isnull(C_15D, 0) Amount, '15day' Age
+	, round(isnull(C_15D, 0),5) Amount, '15day' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_15D, 0) <> 0
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate()-30 as date) InvoiceDate, cast(getdate()-30 as date) DueDate
-	, isnull(C_30D, 0) Amount, '30day' Age
+	, round(isnull(C_30D, 0),5) Amount, '30day' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_30D, 0) <> 0
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate()-45 as date) InvoiceDate, cast(getdate()-45 as date) DueDate
-	, isnull(C_45D, 0) Amount, '45day' Age
+	, round(isnull(C_45D, 0),5) Amount, '45day' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_45D, 0) <> 0
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate()-60 as date) InvoiceDate, cast(getdate()-60 as date) DueDate
-	, isnull(C_60D, 0) Amount, '60day' Age
+	, round(isnull(C_60D, 0),5) Amount, '60day' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_60D, 0) <> 0
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate()-90 as date) InvoiceDate, cast(getdate()-90 as date) DueDate
-	, isnull(C_90D, 0) Amount, '90day' Age
+	, round(isnull(C_90D, 0),5) Amount, '90day' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_90D, 0) <> 0
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate()-120 as date) InvoiceDate, cast(getdate()-120 as date) DueDate
-	, isnull(C_120D, 0) Amount, '120day' Age
+	, round(isnull(C_120D, 0),5) Amount, '120day' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_120D, 0) <> 0
 
 
 	insert into ARAge (c_id, InvoiceDate, DueDate, Amount,  [Age])
 	select c_id, cast(getdate()-150 as date) InvoiceDate, cast(getdate()-150 as date) DueDate
-	, isnull(C_150D, 0) Amount, '150day' Age
+	, round(isnull(C_150D, 0),5) Amount, '150day' Age
 	from ConversionData.dbo.cust c 
 	where C_CUR_BAL <> 0 and isnull(C_150D, 0) <> 0
 
@@ -95,7 +95,7 @@
 	-- ======================================================================================
 	, ar.InvoiceDate 'DocumentDate'
 	, ar.duedate 'DueDate'
-	, round(ar.Amount, 2) 'NettDocumentValue'
+	, round(ar.Amount, 5) 'NettDocumentValue'
 	, b.CompanyOutlet
 	----------------------------
 	,a.[C_ID]
